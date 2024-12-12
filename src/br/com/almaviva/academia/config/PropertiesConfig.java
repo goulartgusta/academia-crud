@@ -3,15 +3,17 @@ package br.com.almaviva.academia.config;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.logging.Logger;
 
 public class PropertiesConfig {
+    private static final Logger logger = Logger.getLogger(PropertiesConfig.class.getName());
 	private static Properties properties = new Properties();
 
 	static void carregarConfigs() {
 		try (FileInputStream arquivoProps = new FileInputStream("resources/config.properties")) {
 			properties.load(arquivoProps);
 		} catch (IOException e) {
-			System.err.println("Erro ao carregar config.properties: " + e.getMessage());
+			logger.severe("Erro ao carregar config.properties: " + e.getMessage());
 		}
 	}
 	
