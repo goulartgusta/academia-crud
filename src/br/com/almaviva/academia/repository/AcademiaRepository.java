@@ -1,10 +1,15 @@
 package br.com.almaviva.academia.repository;
 
-import br.com.almaviva.academia.model.Academia;
-import br.com.almaviva.academia.config.PropertiesConfig;
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
+
+import br.com.almaviva.academia.model.Academia;
 
 public class AcademiaRepository {
     private static final String ARQUIVO_ACADEMIAS = "resources/Academias.txt";
